@@ -52,48 +52,92 @@
       </div>
     </header>
 
-    <main class="w-screen h-screen">
-      <!-- <aside class="w-60 h-screen hidden md:block pl-10">
-        <div class="p-8"></div>
-
-        <div class="p-8 mt-5 flex flex-col gap-3">
-          <a href="/" aria-label="voltar para a tela inicial">
-            <i
-              aria-hidden="true"
-              class="fas fa-home text-slate-200 text-xl"
-            ></i>
-          </a>
-          <a href="/" aria-label="Notas">
-            <i
-              aria-hidden="true"
-              class="fas fa-sticky-note text-slate-200 text-xl"
-            ></i>
-          </a>
-          <a href="/" aria-label="Comentarios">
-            <i
-              aria-hidden="true"
-              class="fas fa-comments text-slate-200 text-xl"
-            ></i>
-          </a>
-          <a href="/" aria-label="voltar para a tela inicial">
-            <i aria-hidden="true" class="fas fa-home text-slate-200 text-xl"></i>
-          </a>
-        </div>
-      </aside> -->
-
-      <div class="container mx-auto h-screen mt-20 flex flex-col items-center">
-        <div
-          class="nf-list flex flex-col flex-wrap items-center justify-center gap-3 p-5"
-        >
-          <li
-            class="nf-list-item list-none w-60 h-60 bg-slate-700 rounded flex items-center justify-center"
-          >
-            <a
-              class="text-center text-sky-400 font-medium tracking-widest cursor-pointer"
-              href="/"
-              >CST</a
-            >
-          </li>
+    <main class="w-screen h-screen container mx-auto">
+      <div class="relative rounded-x1 overflow-auto rounded mt-20">
+        <div class="shadow-sm overflow-hidden my-8">
+          <table class="border-collapse table-auto w-full text-sm">
+            <thead class="bg-gray-900">
+              <tr>
+                <th
+                  class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                >
+                  Fornecedor
+                </th>
+                <th
+                  class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                >
+                  Vencimento
+                </th>
+                <th
+                  class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                >
+                  Lançar até
+                </th>
+                <th
+                  class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                >
+                  Cobrar Fornecedor
+                </th>
+                <th
+                  class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                >
+                  Observação
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-slate-800">
+              <tr class="rounded">
+                <td
+                  class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  Bsoft
+                </td>
+                <td
+                  class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  10 mês corrente
+                </td>
+                <td
+                  class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  3 mês corrente
+                </td>
+                <td
+                  class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  3 mês corrente
+                </td>
+                <td
+                  class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  William vai verificar com o Junior se vai ficar sempre nesse
+                  projeto. Pedir para a Jaque alterar o contrato, assim que o
+                  Junior retornar.
+                </td>
+                <td
+                  class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  <button class="hover:text-slate-300" id="btn-salvar">
+                    Salvar
+                  </button>
+                </td>
+                <td
+                  class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  <button class="hover:text-slate-300" id="btn-editar">
+                    Editar
+                  </button>
+                </td>
+                <td
+                  class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+                >
+                  <button class="hover:text-slate-300" id="btn-excluir">
+                    Excluir
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>
