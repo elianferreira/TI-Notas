@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>TI - Lançamentos</title>
+  </head>
+  <body>
+    <div
+      class="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"
+    >
+      <div class="w-[108rem] flex-none flex justify-end">
+        <picture>
+          <img
+            src="https://tailwindcss.com/_next/static/media/docs-dark@30.77f062b5fd90f0d2cd4752cd9a8649c8.avif"
+            alt=""
+          />
+        </picture>
+      </div>
+    </div>
+
+    <header
+      class="container mx-auto pt-8 flex flex-col md:flex-row lg:flex-row justify-center items-center gap-6 md:justify-between"
+    >
+      <div class="header-logo">
+        <h1 class="text-xl text-slate-200 font-extrabold">TI - NFs</h1>
+      </div>
+      <div class="header-pesquisa flex gap-6">
+        <label class="relative block">
+          <span class="sr-only">Search</span>
+          <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+            <i class="fas fa-search text-slate-500 cursor-pointer"></i>
+          </span>
+          <input
+            class="placeholder:italic placeholder:text-slate-400 text-slate-200 block bg-slate-700 w-full border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+            placeholder="Search for anything..."
+            type="text"
+            name="search"
+          />
+        </label>
+      </div>
+    </header>
+
+    <main class="w-screen h-screen">
+      <!-- <aside class="w-60 h-screen hidden md:block pl-10">
+        <div class="p-8"></div>
+
+        <div class="p-8 mt-5 flex flex-col gap-3">
+          <a href="/" aria-label="voltar para a tela inicial">
+            <i
+              aria-hidden="true"
+              class="fas fa-home text-slate-200 text-xl"
+            ></i>
+          </a>
+          <a href="/" aria-label="Notas">
+            <i
+              aria-hidden="true"
+              class="fas fa-sticky-note text-slate-200 text-xl"
+            ></i>
+          </a>
+          <a href="/" aria-label="Comentarios">
+            <i
+              aria-hidden="true"
+              class="fas fa-comments text-slate-200 text-xl"
+            ></i>
+          </a>
+          <a href="/" aria-label="voltar para a tela inicial">
+            <i aria-hidden="true" class="fas fa-home text-slate-200 text-xl"></i>
+          </a>
+        </div>
+      </aside> -->
+
+      <div class="container mx-auto h-screen mt-20 flex flex-col items-center">
+        <div
+          class="nf-list flex flex-col flex-wrap items-center justify-center gap-3 p-5"
+        >
+          <li
+            class="nf-list-item list-none w-60 h-60 bg-slate-700 rounded flex items-center justify-center"
+          >
+            <a
+              class="text-center text-sky-400 font-medium tracking-widest cursor-pointer"
+              href="/"
+              >CST</a
+            >
+          </li>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
