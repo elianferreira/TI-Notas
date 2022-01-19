@@ -53,7 +53,7 @@
     </header>
 
     <main class="w-screen h-screen container mx-auto">
-      <form action="" class="mt-20 flex">
+      <form action="" class="mt-20 flex flex-col md:flex-row gap-4">
         <div class="flex flex-col gap-3 mr-5">
           <label for="" class="text-slate-400 sm:text-sm">Fornecedor</label>
           <input
@@ -82,7 +82,9 @@
           />
         </div>
         <div class="flex flex-col gap-3 mr-5">
-          <label for="" class="text-slate-400 sm:text-sm">Cobrar Fornecedor</label>
+          <label for="" class="text-slate-400 sm:text-sm"
+            >Cobrar Fornecedor</label
+          >
           <input
             type="text"
             name="Fornecedor"
@@ -91,13 +93,21 @@
           />
         </div>
         <div class="flex flex-col gap-3 mr-5">
-          <label for="" class="text-slate-400 sm:text-sm">Fornecedor</label>
+          <label for="" class="text-slate-400 sm:text-sm">Observação</label>
           <input
             type="text"
             name="Fornecedor"
             id="form-fornecedor"
             class="rounded p-2 bg-slate-700 text-slate-200 outline-none sm:text-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
           />
+        </div>
+        <div class="btn-button flex items-end">
+          <button
+            type="submit"
+            class="bg-slate-700 p-2 rounded text-slate-200 sm:text-sm hover:bg-slate-600"
+          >
+            Salvar Fornecedor
+          </button>
         </div>
       </form>
 
