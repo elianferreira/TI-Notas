@@ -36,24 +36,35 @@
       <div class="header-logo">
         <h1 class="text-xl text-slate-200 font-extrabold">TI - NFs</h1>
       </div>
-      <div class="header-pesquisa flex gap-6">
-        <label class="relative block">
-          <span class="sr-only">Search</span>
-          <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-            <i class="fas fa-search text-slate-500 cursor-pointer"></i>
-          </span>
-          <input
-            class="placeholder:italic placeholder:text-slate-400 text-slate-200 block bg-slate-700 w-full border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-            placeholder="Search for anything..."
-            type="text"
-            name="search"
-          />
-        </label>
+
+      <div
+        class="content-search content-btn flex flex-row-reverse gap-6 items-center"
+      >
+        <div class="header-pesquisa flex gap-6">
+          <label class="relative block">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              <i class="fas fa-search text-slate-500 cursor-pointer"></i>
+            </span>
+            <input
+              class="placeholder:italic placeholder:text-slate-400 text-slate-200 block bg-slate-700 w-full border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+              placeholder="Procure pela nota..."
+              type="text"
+              name="search"
+            />
+          </label>
+        </div>
+
+        <div class="btn-add-task" id="btn-add-task">
+          <button class="text-slate-500">
+            <i class="fas fa-plus-circle text-xl"></i>
+          </button>
+        </div>
       </div>
     </header>
 
     <main class="w-screen h-screen container mx-auto">
-      <form action="" class="mt-20 flex flex-col md:flex-row gap-4">
+      <!-- <form action="" class="mt-20 flex flex-col md:flex-row gap-4">
         <div class="flex flex-col gap-3 mr-5">
           <label for="" class="text-slate-400 sm:text-sm">Fornecedor</label>
           <input
@@ -109,7 +120,7 @@
             Salvar Fornecedor
           </button>
         </div>
-      </form>
+      </form> -->
 
       <div class="relative rounded-x1 overflow-auto rounded mt-20">
         <div class="shadow-sm overflow-hidden my-8">
@@ -197,6 +208,10 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div class="content-cad text-slate-200 active" id="content-cad">
+        <button class="close-btn" id="close-btn-cad"><i class="fas fa-times-circle text-2xl text-slate-500"></i></button>
       </div>
     </main>
 
