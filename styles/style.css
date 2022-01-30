@@ -28,6 +28,7 @@ body {
           transform: translateX(-3000px);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  padding: 20px;
 }
 
 .content-cad.active {
@@ -41,5 +42,19 @@ body {
   position: absolute;
   right: 2em;
   top: 2em;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+
+#taskContainer {
+  z-index: 999;
 }
 /*# sourceMappingURL=style.css.map */
