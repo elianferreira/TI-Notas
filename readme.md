@@ -1,1 +1,1 @@
-- Fazer filtro na barra de pesquisa, (Pesquisar se o filtro da pra fazer sem ser 'li').
+- Inserir célula de valor e valor anterior.
