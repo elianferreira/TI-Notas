@@ -41,14 +41,30 @@ body {
   top: 2em;
 }
 
+#taskContainer {
+  z-index: 999;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(90, 153, 90);
+  cursor: pointer;
+}
+
+.wait-oc{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(189, 201, 85);
+  cursor: pointer;
+}
+
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
-}
-
-#taskContainer {
-  z-index: 999;
 }

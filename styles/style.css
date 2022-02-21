@@ -44,6 +44,26 @@ body {
   top: 2em;
 }
 
+#taskContainer {
+  z-index: 999;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #5a995a;
+  cursor: pointer;
+}
+
+.wait-oc {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #bdc955;
+  cursor: pointer;
+}
+
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -52,9 +72,5 @@ input[type='number'] {
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
           appearance: textfield;
-}
-
-#taskContainer {
-  z-index: 999;
 }
 /*# sourceMappingURL=style.css.map */

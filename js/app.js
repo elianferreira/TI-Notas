@@ -14,10 +14,13 @@ closeBtnCad.addEventListener('click', () => {
 
 let editStatus = false;
 let id = '';
+let task;
 
-let tBody = document.getElementById('t-body');
+let arrayDoc = [];
+
 let tableContent = document.getElementById('table-content');
 let taskForm = document.getElementById('taskForm');
+let lista = document.getElementById('lista');
 
 /**
  * Save a New Task in Firestore
@@ -108,35 +111,38 @@ window.addEventListener('DOMContentLoaded', async (e) => {
   </thead>`;
 
     querySnapshot.forEach((doc) => {
-      const task = doc.data();
+      // const task = doc.data();
 
-      tableContent.innerHTML += `
+      task = doc.data();
+
+      tableContent.innerHTML += `<tbody class="bg-white dark:bg-slate-800" id="t-body">
       <tr class="rounded">
         <td
-          class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+          class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
           ${task.fornecedor}
         </td>
         <td
-          class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+          class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
         ${task.vencimento}
         </td>
         <td
-          class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+          class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
         ${task.lancar}
         </td>
         <td
-          class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+          class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
         ${task.cobrar}
         </td>
         <td
-          class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+          class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
           ${task.observacao}
         </td>
+
         <td
           class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
@@ -154,7 +160,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           </button>
 
         </td>
-      </tr>`;
+      </tr>
+      </tbody>`;
     });
 
     const btnsDelete = tableContent.querySelectorAll('.btn-task-delete');
@@ -185,7 +192,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           taskForm['task-lancar'].value = task.lancar;
           taskForm['task-emissao'].value = task.emissao;
           taskForm['task-cobrar'].value = task.cobrar;
-          taskForm['task-dias'].value = task.dias;
+          taskForm['task-dias'].value = task.diasUteis;
           taskForm['task-projetos'].value = task.projetos;
           taskForm['task-situacao'].value = task.situacaoContrato;
           taskForm['task-rateio'].value = task.rateio;
@@ -256,8 +263,30 @@ taskForm.addEventListener('submit', async (e) => {
     }
 
     taskForm.reset();
-    title.focus();
+    // title.focus();
   } catch (error) {
     console.log(error);
   }
 });
+
+let search = document.getElementById('search');
+
+function filter() {
+  let rows = tableContent.rows;
+  let value = search.value;
+
+  for (let i = 0; i < rows.length; i++) {
+    let element = rows[i];
+    let find = false;
+    for (let j = 0; j < element.cells.length; j++) {
+      let text = element.cells[j].innerText;
+      if (text.indexOf(value) != -1) {
+        find = true;
+        break;
+      }
+    }
+
+    element.style.display = find ? 'table-row' : 'none';
+  }
+}
+
