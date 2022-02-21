@@ -35,6 +35,8 @@ let lista = document.getElementById('lista');
  * @param {string} projetos
  * @param {string} situacaoContrato
  * @param {string} rateio
+ * @param {string} valor
+ * @param {string} valor_anterior
  * @param {string} observacao
  */
 
@@ -50,6 +52,8 @@ const saveTask = (
   projetos,
   situacaoContrato,
   rateio,
+  valor,
+  valor_anterior,
   observacao
 ) =>
   db.collection('tasks').doc().set({
@@ -64,6 +68,8 @@ const saveTask = (
     projetos,
     situacaoContrato,
     rateio,
+    valor,
+    valor_anterior,
     observacao,
   });
 
@@ -86,6 +92,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
       >
         Fornecedor
+      </th>
+      <th
+        class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+      >
+        Valor
       </th>
       <th
         class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
@@ -122,6 +133,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         >
           ${task.fornecedor}
         </td>
+        <td
+        class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+      >
+        ${task.valor}
+      </td>
         <td
           class="border-b border-t border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
         >
@@ -196,6 +212,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           taskForm['task-projetos'].value = task.projetos;
           taskForm['task-situacao'].value = task.situacaoContrato;
           taskForm['task-rateio'].value = task.rateio;
+          taskForm['task-valor'].value = task.valor;
+          taskForm['task-valor_anterior'].value = task.valor_anterior;
           taskForm['task-observacao'].value = task.observacao;
 
           editStatus = true;
@@ -223,6 +241,8 @@ taskForm.addEventListener('submit', async (e) => {
   const projetos = taskForm['task-projetos'];
   const situacaoContrato = taskForm['task-situacao'];
   const rateio = taskForm['task-rateio'];
+  const valor = taskForm['task-valor'];
+  const valor_anterior = taskForm['task-valor_anterior'];
   const observacao = taskForm['task-observacao'];
 
   try {
@@ -239,6 +259,8 @@ taskForm.addEventListener('submit', async (e) => {
         projetos.value,
         situacaoContrato.value,
         rateio.value,
+        valor.value,
+        valor_anterior.value,
         observacao.value
       );
     } else {
@@ -254,6 +276,8 @@ taskForm.addEventListener('submit', async (e) => {
         projetos: projetos.value,
         situacaoContrato: situacaoContrato.value,
         rateio: rateio.value,
+        valor: valor.value,
+        valor_anterior: valor_anterior.value,
         observacao: observacao.value,
       });
 
@@ -289,4 +313,3 @@ function filter() {
     element.style.display = find ? 'table-row' : 'none';
   }
 }
-
