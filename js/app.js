@@ -2,7 +2,6 @@ let addTask = document.getElementById('btn-add-task');
 let contentCad = document.getElementById('content-cad');
 let closeBtnCad = document.getElementById('close-btn-cad');
 
-
 addTask.addEventListener('click', () => {
   contentCad.classList.toggle('active');
 });
@@ -314,3 +313,5 @@ function filter() {
     element.style.display = find ? 'table-row' : 'none';
   }
 }
+
+console.log('passou!');
