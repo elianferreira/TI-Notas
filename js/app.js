@@ -313,5 +313,3 @@ function filter() {
     element.style.display = find ? 'table-row' : 'none';
   }
 }
-
-console.log('passou!');
