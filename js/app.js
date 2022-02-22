@@ -1,7 +1,7 @@
 let addTask = document.getElementById('btn-add-task');
 let contentCad = document.getElementById('content-cad');
 let closeBtnCad = document.getElementById('close-btn-cad');
-let teste = teste;
+
 
 addTask.addEventListener('click', () => {
   contentCad.classList.toggle('active');
